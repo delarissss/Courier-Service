@@ -23,7 +23,9 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
+            groupId = "org.example"
             artifactId = "Courier-Service"
+            version = "1.0-SNAPSHOT"
         }
     }
     repositories {
