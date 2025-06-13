@@ -91,5 +91,4 @@ public class CourierServiceTest {
         String cvc = "123";
         assertEquals("Неверный ввод данных карты.", Payment.addCard(cardNumber, expiryDate, cvc));
     }
-
 }
