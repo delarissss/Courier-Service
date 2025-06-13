@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.example"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
@@ -23,9 +23,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
-            groupId = "org.example"
-            artifactId = "Courier-Service"
-            version = "1.0-SNAPSHOT"
+            artifactId = "courier"
         }
     }
     repositories {
@@ -33,8 +31,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/delarissss/Courier-Service")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: ""
             }
         }
     }
