@@ -55,6 +55,7 @@ public class Payment {
         total.append("Метод оплаты: ").append(paymentMethod).append("\n");
         return total.toString();
     }
+    //Расчет стоимости
     static String paymentProcess(String deliveryType, double price) {
         Scanner scanner = new Scanner(System.in);
         String paymentMethod = null;
@@ -94,6 +95,7 @@ public class Payment {
         }
         return "Оплата завершена";
     }
+
     public static String addCard(String cardNumber, String expiryDate, String cvc) {
         PaymentCard paymentCard = new PaymentCard(cardNumber, expiryDate, cvc);
         if (paymentCard.isValid()) {
